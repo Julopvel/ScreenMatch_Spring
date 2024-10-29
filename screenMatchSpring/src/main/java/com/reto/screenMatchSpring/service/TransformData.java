@@ -8,7 +8,7 @@ public class TransformData implements ITransformData{
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    public <T> T gteData(String json, Class<T> clase) {
+    public <T> T getData(String json, Class<T> clase) {
         try {
             return objectMapper.readValue(json,clase);
         } catch (JsonProcessingException e) {
