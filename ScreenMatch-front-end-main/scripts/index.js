@@ -23,7 +23,7 @@ function crearListaPeliculas(elemento, datos) {
     const listaHTML = datos.map((pelicula) => `
         <li>
             <a href="/detalles.html?id=${pelicula.id}">
-                <img src="${pelicula.Poster}" alt="${pelicula.titulo}">
+                <img src="${pelicula.poster}" alt="${pelicula.title}">
             </a>
         </li>
     `).join('');
@@ -79,7 +79,7 @@ function generaSeries() {
         .then(data => {
             crearListaPeliculas(elementos.top5, data[0]);
             crearListaPeliculas(elementos.lanzamientos, data[1]);
-            crearListaPeliculas(elementos.series, data[2].slice(0, 5));
+            crearListaPeliculas(elementos.series, data[2].slice(0, 6));
         })
         .catch(error => {
             tratarConErrores("Ocurrio un error al cargar los datos.");
